@@ -1,7 +1,7 @@
 # kotlin_kapt_demo
 kotlin kapt demo
 
-### 调试方法 ###
+### 调试方法 
 ##### 1.在as中的命令行输入命令:
 
 gradlew --no-daemon -Dorg.gradle.debug=true -Dkotlin.daemon.jvm.options="-Xdebug,-Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=n" :app:clean :app:assemble
@@ -15,14 +15,10 @@ gradlew --no-daemon -Dorg.gradle.debug=true -Dkotlin.daemon.jvm.options="-Xdebug
 
 
 
-
-<br>
-### 遇到的问题  
-##### annotationProcessors.json not found
-删掉.gradle文件夹
+### 遇到的问题 
+annotationProcessors.json not found.删掉.gradle文件夹就可以解决
   
   
-<br/>  
 ### 资料
 
 [java注解](https://juejin.cn/post/6844903477907324935#heading-6)<br>
