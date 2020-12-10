@@ -1,0 +1,4 @@
+include ':annotationCompiler'
+include ':annotation'
+include ':app'
+rootProject.name = "kaptDemo"
