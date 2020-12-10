@@ -1,7 +1,7 @@
 # kotlin_kapt_demo
 kotlin kapt demo
 
-### 调试方法 
+### kapt断点调试方法 
 ##### 1.在as中的命令行输入命令:
 
 gradlew --no-daemon -Dorg.gradle.debug=true -Dkotlin.daemon.jvm.options="-Xdebug,-Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=n" :app:clean :app:assemble
@@ -11,6 +11,9 @@ gradlew --no-daemon -Dorg.gradle.debug=true -Dkotlin.daemon.jvm.options="-Xdebug
 注意端口号对应,并点击as中的调试按钮启动它.  
 
 ##### 3.打号断点并运行Build-Rebuild.等待执行到断点.  
+
+### AbstractProcessor日志打印位置
+通过processingEnv.messager输出的日志可以在as中的build输出中看到
 
 
 
