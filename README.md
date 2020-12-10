@@ -11,17 +11,25 @@ gradlew --no-daemon -Dorg.gradle.debug=true -Dkotlin.daemon.jvm.options="-Xdebug
 注意端口号对应,并点击as中的调试按钮启动它.  
 
 ##### 3.打号断点并运行Build-Rebuild.等待执行到断点.  
+<br>
+<br>
+<br>
+<br>
 
 ### AbstractProcessor日志打印位置
 通过processingEnv.messager输出的日志可以在as中的build输出中看到
-
-
-
+<br>
+<br>
+<br>
+<br>
 
 ### 遇到的问题 
 annotationProcessors.json not found.删掉.gradle文件夹就可以解决
-  
-  
+<br>
+<br>
+<br>
+<br>
+
 ### 资料
 
 [java注解](https://juejin.cn/post/6844903477907324935#heading-6)<br>
