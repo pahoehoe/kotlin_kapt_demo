@@ -1,10 +1,7 @@
-apply plugin: 'java-library'
-apply plugin: 'kotlin'
-//plugins {
-//    id 'java-library'
-//    id 'kotlin'
-////    id "org.jetbrains.kotlin.kapt"
-//}
+plugins {
+    id 'java-library'
+    id 'kotlin'
+}
 
 
 dependencies {
