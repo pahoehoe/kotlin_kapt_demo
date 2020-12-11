@@ -20,12 +20,17 @@ class FactoryProcessor : AbstractProcessor() {
 
     lateinit var elementUtil: Elements
     lateinit var logger: Logger
+    lateinit var moduleName: String
+
+    private val MODULE_NAME_KEY: String = "MODULE_NAME"
+    private val PACKAGE_NAME:String ="com.my.factoryspack"
 
     override fun init(processingEnv: ProcessingEnvironment) {
         super.init(processingEnv)
         elementUtil = processingEnv.elementUtils
         logger = Logger(processingEnv.messager)
-        logger.info("FactoryProcessor init")
+        moduleName = processingEnv.options.get(MODULE_NAME_KEY)!!
+        println("FactoryProcessor init:moduleName=$moduleName")
     }
 
     override fun process(
@@ -49,10 +54,7 @@ class FactoryProcessor : AbstractProcessor() {
             .addStatement(" ")
             .returns(Meal::class.java)
 
-        var packageName: String? = null
-
         elements.forEach {
-            packageName = elementUtil.getPackageOf(it).qualifiedName.toString()
             val annotation = it.getAnnotation(Factory::class.java)
             funSpecBuilder.apply {
                 beginControlFlow("if (\"${annotation.id}\".equals(id))")
@@ -64,10 +66,10 @@ class FactoryProcessor : AbstractProcessor() {
 
         funSpecBuilder.addStatement("throw IllegalArgumentException(\"Unknown id = \" + id)")
 
-        val typeSpecBuilder = TypeSpec.classBuilder("MyFactory")
+        val typeSpecBuilder = TypeSpec.classBuilder(moduleName+"_Factory")
             .addFunction(funSpecBuilder.build())
 
-        FileSpec.builder(packageName!!, "MyFactory")
+        FileSpec.builder(PACKAGE_NAME, "MyFactory")
             .addType(typeSpecBuilder.build())
             .build().writeFile()
         return true
