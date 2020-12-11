@@ -4,11 +4,11 @@ import com.bigboluo.annotation.Factory
 import com.bigboluo.annotation.Meal
 
 @Factory(
-    id = "MyMeal",
-    value = MyMeal::class
+    id = "BirdMeal",
+    value = BirdMeal::class
 )
-class MyMeal :Meal {
+class BirdMeal : Meal {
     override fun eat() {
-        println("eat my meal!")
+        println("eat bird meal!")
     }
 }

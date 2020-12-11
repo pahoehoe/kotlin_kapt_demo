@@ -20,7 +20,11 @@ class Logger( val mMsg: Messager) {
     }
 
     fun info(info: CharSequence?) {
-        print(Diagnostic.Kind.NOTE, ">>> $info <<<\n")
+        print(Diagnostic.Kind.NOTE, " $info")
+    }
+
+    fun log(log:String?){
+        mMsg.printMessage(Diagnostic.Kind.NOTE,log)
     }
 
     fun warning(waring: CharSequence?) {
