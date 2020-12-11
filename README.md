@@ -23,6 +23,17 @@ gradlew --no-daemon -Dorg.gradle.debug=true -Dkotlin.daemon.jvm.options="-Xdebug
 <br>
 <br>
 
+### 给处理器传递参数
+[java版本参数传递](https://blog.csdn.net/qq_19431333/article/details/89431065)
+kotlin配置不同:
+```
+kapt {
+    arguments {
+        arg("module_name", "App")
+    }
+}
+```
+
 ### 遇到的问题 
 annotationProcessors.json not found.删掉.gradle文件夹就可以解决
 <br>
