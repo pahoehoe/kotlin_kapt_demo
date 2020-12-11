@@ -1,3 +1,5 @@
+include ':One'
+include ':OtherCommand'
 include ':commands'
 include ':annotationCompiler'
 include ':annotation'

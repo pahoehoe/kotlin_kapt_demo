@@ -27,8 +27,7 @@ class MainActivity : AppCompatActivity() {
         factory.create("DogMeal").eat()
         factory.create("BirdMeal").eat()
         factory.create("MyMeal").eat()
-
-        Commands.getCommandByName("ClickCommand", null).run(Script())
+        Commands.getCommandByName("OneCommand", null).run(Script())
     }
 
 }

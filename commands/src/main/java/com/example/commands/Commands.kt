@@ -26,9 +26,11 @@ object Commands {
         }
 
         println("Commands done,commandsMap.size:" + commandsMap.size)
+        commandsMap.forEach { println("key:${it.key}   value:${it.value}") }
     }
 
     fun getCommandByName(name: String, params: Bundle?): CustomCommand {
+        println("getCommandByName:$name")
         return commandsMap[name]?.let { it.constructors.toMutableList()[0].call(params) } as CustomCommand
     }
 }
