@@ -33,6 +33,17 @@ kapt {
     }
 }
 ```
+### 在kotlinpoet中写val myMap:Map<String, KClass<out Any>>
+
+```
+Map::class.asClassName()
+    .parameterizedBy(
+        String::class.asClassName(),
+        KClass::class.asClassName().parameterizedBy(WildcardTypeName.producerOf(ANY))
+    )
+```
+[How to set Map<String, KClass<out Any>> as property type?](https://stackoverflow.com/questions/55846678/how-to-set-mapstring-kclassout-any-as-property-type)
+    
 
 ### 遇到的问题 
 annotationProcessors.json not found.删掉.gradle文件夹就可以解决
@@ -47,3 +58,4 @@ annotationProcessors.json not found.删掉.gradle文件夹就可以解决
 [kotlin kapt调试](og.csdn.net/xx326664162/article/details/91456018)  
 [Android 注解系列之APT工具（三）](https://juejin.cn/post/6844903701283340301#heading-7)  
 [通过指定包名，扫描包下面包含的所有的ClassName](https://www.javatips.net/api/ARouter-master/arouter-api/src/main/java/com/alibaba/android/arouter/utils/ClassUtils.java)
+
