@@ -46,3 +46,4 @@ annotationProcessors.json not found.删掉.gradle文件夹就可以解决
 [java注解](https://juejin.cn/post/6844903477907324935#heading-6)<br>
 [kotlin kapt调试](og.csdn.net/xx326664162/article/details/91456018)  
 [Android 注解系列之APT工具（三）](https://juejin.cn/post/6844903701283340301#heading-7)
+[通过指定包名，扫描包下面包含的所有的ClassName](https://www.javatips.net/api/ARouter-master/arouter-api/src/main/java/com/alibaba/android/arouter/utils/ClassUtils.java)
